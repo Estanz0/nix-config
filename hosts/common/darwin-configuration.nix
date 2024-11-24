@@ -9,7 +9,7 @@
     defaults = {
       # Dock settings
       dock = {
-        autohide = false;
+        autohide = true;
         autohide-delay = 0.0;
         autohide-time-modifier = 0.0;
         expose-animation-duration = 0.12;
