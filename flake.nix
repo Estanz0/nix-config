@@ -19,9 +19,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-
-
-  outputs = { self, nixpkgs, darwin, home-manager, stylix, ... }:
+  outputs = { self, nixpkgs, darwin, home-manager, stylix, ... }@inputs:
   let
     system = "aarch64-darwin";
 
@@ -31,11 +29,30 @@
         allowUnfree = true;
       };
     };
+
+    specialArgs = {
+      inherit inputs system personal;
+    };
+
+    extraSpecialArgs = {
+      inherit inputs system personal;
+    };
+
+    personal = {
+        user = "byron";
+        timeZone = "Pacific/Auckland";
+        defaultLocale = "en_NZ.UTF-8";
+        city = "Auckland";
+
+        # Used for gitconfig
+        gitUser = "Estanz0";
+        gitEmail = "68315031+Estanz0@users.noreply.github.com";
+    };
   in
   {
     # nix-darwin configuration
     darwinConfigurations."Byrons-Mac-mini" = darwin.lib.darwinSystem {
-      inherit pkgs;
+      inherit pkgs specialArgs;
 
       modules = [
         ./hosts/mac-mini-m4/darwin-configuration.nix
@@ -44,8 +61,8 @@
 
     # home-manager configuration
     homeConfigurations = {
-      "byron@Byrons-Mac-mini" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      "${personal.user}@Byrons-Mac-mini" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs extraSpecialArgs;
 
       modules = [
         ./hosts/mac-mini-m4/home.nix

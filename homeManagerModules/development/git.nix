@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  personal,
   ...
 }:
 {
@@ -11,8 +12,8 @@
   config = lib.mkIf config.byron-home.git.enable {
     programs.git = {
       enable = true;
-      userName = "Estanz0";
-      userEmail = "byron.lg.smith@gmail.com";
+      userName = "${personal.gitUser}";
+      userEmail = "${personal.gitEmail}";
 
       extraConfig = {
         init.defaultBranch = "main";

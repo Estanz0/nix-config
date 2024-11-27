@@ -21,21 +21,21 @@
           flakeDir = "~/.config/nix-config";
         in
         {
-          hms = "home-manager switch --flake ${flakeDir}";
+            hms = "home-manager switch --flake ${flakeDir}";
 
-          darwin = "nix build .#darwinConfigurations.Byrons-Mac-mini.system && ./result/sw/bin/darwin-rebuild switch --flake .#Byrons-Mac-mini";
+            darwin = "nix build .#darwinConfigurations.Byrons-Mac-mini.system && ./result/sw/bin/darwin-rebuild switch --flake .#Byrons-Mac-mini";
 
-          # Frequently used commands
-          type = "type -a";
-        md = "mkdir -p";
-        cls = "clear";
+            # Frequently used commands
+            type = "type -a";
+            md = "mkdir -p";
+            cls = "clear";
 
-        l = "ls -l";
-        la = "ls -a";
-        lsa = "ls -la";
-        lt = "ls --tree";
+            l = "ls -l";
+            la = "ls -a";
+            lsa = "ls -la";
+            lt = "ls --tree";
 
-          "1" = "cd -1";
+            "1" = "cd -1";
             "2" = "cd -2";
             "3" = "cd -3";
 
