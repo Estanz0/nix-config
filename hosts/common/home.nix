@@ -17,7 +17,18 @@
   home = {
     stateVersion = "23.11";
 
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      wget
+      curl
+      jq
+
+      cocogitto
+      lazygit
+
+      (python312.withPackages (p: with p; [
+        requests
+      ]))
+     ];
 
   };
 
