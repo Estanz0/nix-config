@@ -1,9 +1,16 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Change color palette
+palette = "catppuccin_mocha"
+
 # Inserts a blank line between shell prompts
 add_newline = true
-format = """$directory$character"""
+format = """
+$directory\
+$line_break\
+$character
+"""
 right_format = """$all"""
 
 [aws]
@@ -11,6 +18,7 @@ symbol = "  "
 format = " [$symbol($profile )(\\($region\\) )(\\[$duration\\])]($style)"
 
 [azure]
+disabled = true
 format = " [$symbol($subscription)]($style)"
 
 [battery]
@@ -41,6 +49,7 @@ format = " [$symbol($version)]($style)"
 
 [cmd_duration]
 disabled = true
+min_time = 0
 format = " took [$duration]($style)"
 
 [conda]
@@ -94,6 +103,10 @@ format = " [$symbol($version)]($style)"
 symbol = " "
 format = " [$symbol($version)]($style)"
 
+[fill]
+disabled = false
+symbol = "="
+
 [fossil_branch]
 format = " [$symbol$branch]($style)"
 
@@ -101,6 +114,7 @@ format = " [$symbol$branch]($style)"
 format = " ([+$added]($added_style))([-$deleted]($deleted_style))"
 
 [gcloud]
+disabled = true
 format = " [$symbol$account(@$domain)(\\($region\\))]($style)"
 
 [git_branch]
@@ -179,9 +193,8 @@ format = " [$symbol$branch(:$topic)]($style)"
 format = " [$symbol($version)]($style)"
 
 [nix_shell]
-symbol = ""
-# format = " [$symbol$state( \\($name\\))]($style)"
-format = " [$symbol(\\($name\\))]($style)"
+symbol = " "
+format = " [$symbol$state( \\($name\\))]($style)"
 
 [nodejs]
 symbol = " "
@@ -225,7 +238,6 @@ format = " [$symbol($version)]($style)"
 symbol = " "
 version_format = 'v${major}.${minor}'
 format = " [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\))]($style)"
-python_binary = ["python3", "python", "python2"]
 
 [quarto]
 format = " [$symbol($version)]($style)"
@@ -295,3 +307,32 @@ format = " vcsh [$symbol$repo]($style)"
 [zig]
 symbol = " "
 format = " [$symbol($version)]($style)"
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
