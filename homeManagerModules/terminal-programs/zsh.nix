@@ -31,13 +31,10 @@
             cls = "clear";
 
             l = "ls -l";
+            ls = "lsd";
             la = "ls -a";
             lsa = "ls -la";
             lt = "ls --tree";
-
-            "1" = "cd -1";
-            "2" = "cd -2";
-            "3" = "cd -3";
 
             g = "git";
             ga = "git add";
@@ -86,8 +83,8 @@
 
         autoload -Uz is-at-least
 
+        mkdir -p ~/.zfunc
         cog generate-completions zsh > ~/.zfunc/_cog
-
 
         function git_current_branch() {
             local ref
@@ -255,38 +252,6 @@
             emulate -L zsh
             clipcopy $1
         }
-
-        # zle-line-init() {
-        #   emulate -L zsh
-
-        #   [[ $CONTEXT == start ]] || return 0
-
-        #   while true; do
-        #     zle .recursive-edit
-        #     local -i ret=$?
-        #     [[ $ret == 0 && $KEYS == $'\4' ]] || break
-        #     [[ -o ignore_eof ]] || exit 0
-        #   done
-
-        #   local saved_prompt=$PROMPT
-        #   local saved_rprompt=$RPROMPT
-
-        #   # Set prompt value from character module
-        #   PROMPT="$(starship module -s ''${STARSHIP_CMD_STATUS:-0} character)"
-        #   RPROMPT='''
-        #   zle .reset-prompt
-        #   PROMPT=$saved_prompt
-        #   RPROMPT=$saved_rprompt
-
-        #   if (( ret )); then
-        #     zle .send-break
-        #   else
-        #     zle .accept-line
-        #   fi
-        #   return ret
-        # }
-
-        # zle -N zle-line-init
       '';
     };
   };
