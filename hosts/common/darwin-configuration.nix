@@ -9,6 +9,7 @@
 
   system = {
     stateVersion = 4;
+
     defaults = {
       # Dock settings
       dock = {
@@ -43,6 +44,12 @@
         ShowExternalHardDrivesOnDesktop = false;
         ShowPathbar = true;
         ShowStatusBar = true;
+      };
+
+      # Control Center settings
+      controlcenter = {
+        Bluetooth = true;
+        BatteryShowPercentage = true;
       };
 
       # Other Setings
