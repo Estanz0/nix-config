@@ -35,7 +35,7 @@
     };
 
     extraSpecialArgs = {
-      inherit inputs system personal;
+      inherit inputs system personal work;
     };
 
     personal = {
@@ -47,6 +47,10 @@
         # Used for gitconfig
         gitUser = "Estanz0";
         gitEmail = "68315031+Estanz0@users.noreply.github.com";
+    };
+
+    work = {
+      user = "byronsmith";
     };
   in
   {
@@ -62,12 +66,21 @@
     # home-manager configuration
     homeConfigurations = {
       "${personal.user}@Byrons-Mac-mini" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs extraSpecialArgs;
+        inherit pkgs extraSpecialArgs;
 
-      modules = [
-        ./hosts/mac-mini-m4/home.nix
-        stylix.homeManagerModules.stylix
-      ];
+        modules = [
+          ./hosts/mac-mini-m4/home.nix
+          stylix.homeManagerModules.stylix
+        ];
+      };
+
+      "${work.user}" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs extraSpecialArgs;
+
+        modules = [
+          ./hosts/macbook-air-m2/home.nix
+          stylix.homeManagerModules.stylix
+        ];
       };
     };
   };
