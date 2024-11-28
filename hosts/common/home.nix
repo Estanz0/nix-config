@@ -18,6 +18,8 @@
     stateVersion = "23.11";
 
     packages = with pkgs; [
+      vscode
+
       wget
       curl
       jq
