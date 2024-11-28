@@ -19,7 +19,15 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, stylix, ... }@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    darwin,
+    home-manager,
+    stylix,
+    ...
+  }@inputs:
+
   let
     system = "aarch64-darwin";
 
@@ -79,7 +87,7 @@
 
         modules = [
           ./hosts/macbook-air-m2/home.nix
-          stylix.homeManagerModules.stylix
+          inputs.stylix.homeManagerModules.stylix
         ];
       };
     };
