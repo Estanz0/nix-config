@@ -24,8 +24,6 @@
       curl
       jq
 
-      zoxide
-
       cocogitto
       lazygit
 
@@ -54,6 +52,7 @@
     starship.enable = true;
     bat.enable = true;
     lsd.enable = true;
+    zoxide.enable = true;
 
     # Misc
     stylix.enable = true;
