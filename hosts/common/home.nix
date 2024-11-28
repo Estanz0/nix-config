@@ -24,6 +24,8 @@
       curl
       jq
 
+      zoxide
+
       cocogitto
       lazygit
 
