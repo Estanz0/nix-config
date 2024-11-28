@@ -17,9 +17,8 @@
   home = {
     stateVersion = "23.11";
 
-    packages = with pkgs; [
+    packages = with pkgs; [ ];
 
-    ];
   };
 
   imports = [
@@ -29,6 +28,9 @@
   programs.home-manager.enable = true;
 
   byron-home = {
+    # Programs
+    kitty.enable = true;
+
     # Development programs
     git.enable = true;
 
