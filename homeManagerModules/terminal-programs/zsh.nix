@@ -30,12 +30,6 @@
             md = "mkdir -p";
             cls = "clear";
 
-            l = "ls -l";
-            ls = "lsd";
-            la = "ls -a";
-            lsa = "ls -la";
-            lt = "ls --tree";
-
             g = "git";
             ga = "git add";
             gaa = "git add --all";
