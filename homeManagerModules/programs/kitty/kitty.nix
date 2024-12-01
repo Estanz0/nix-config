@@ -29,6 +29,12 @@
         tab_separator = " ";
         tab_title_template = " {index} {title} ";
 
+        # Cursor settings
+        cursor = "#cccccc";
+        cursor_shape = "beam";
+        cursor_shape_unfocused = "hollow";
+        cursor_beam_thickness = 2;
+
         # MacOS specific settings
         macos_option_as_alt = true;
         macos_quit_when_last_window_closed = true;
