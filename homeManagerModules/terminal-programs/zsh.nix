@@ -80,6 +80,9 @@
         mkdir -p ~/.zfunc
         cog generate-completions zsh > ~/.zfunc/_cog
 
+        # Setup the brew package manager for GUI apps
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
         function git_current_branch() {
             local ref
             ref=$(git symbolic-ref --quiet HEAD 2> /dev/null)
