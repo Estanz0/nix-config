@@ -30,6 +30,8 @@
       (python312.withPackages (p: with p; [
         requests
       ]))
+
+      nodejs_23
      ];
 
   };
