@@ -23,6 +23,7 @@
       wget
       curl
       jq
+      postgresql
 
       cocogitto
       lazygit
