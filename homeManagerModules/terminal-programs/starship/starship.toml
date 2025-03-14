@@ -13,6 +13,10 @@ $character
 """
 right_format = """$all"""
 
+# Allow longer running commands
+command_timeout = 1000
+
+
 [aws]
 symbol = "  "
 format = " [$symbol($profile )(\\($region\\) )(\\[$duration\\])]($style)"
